@@ -1,92 +1,33 @@
-# PEACE FOR ALL グラフィックTシャツ（半袖・レギュラーフィット）アカマイ
+# 💖 Forever Yours, My Ardhangini 💍
 
-## Introduction
-UNIQLOが発売しているTシャツに印刷されているプログラムを写経・加筆して実行可能にしてみました。
-https://www.uniqlo.com/jp/ja/products/E459561-000
+Welcome to the most heartfelt project on GitHub — a lovingly crafted, private website dedicated to **Dikshita**, the girl who stole Ritik's heart 💗.
 
-### YouTube Shorts
+This isn't just code. It's love, poetry, and a promise across lifetimes. 💘
 
-https://youtube.com/shorts/vfnzovi-HG8
+---
 
-### Sample web client
+## 🌸 What's Inside?
 
-https://codesandbox.io/s/r0hx18
+This single-page HTML website includes:
 
-## Getting Started
+- 💌 A deeply personal **love letter**
+- 📜 A custom-written **poem across 7 lifetimes**
+- ✨ Hand-picked **romantic quotes**
+- ⏳ A **countdown** showing days since April 14th, 2025 — the day our story began
+- 🎨 A soft **baby pink theme** with lots of cute emojis to express infinite love 💗💫
 
-0. downloading and installing Go: https://go.dev/doc/install
-1. clone this repository: `git clone git@github.com:yoidea/akamai-t-shirt.git `
-2. change the directory: `cd akamai-t-shirt`
-3. start a server: `go run main.go`
+---
 
-## API Usage
+## 🌐 Live Preview
 
-### Host Domain
-```
-http://localhost:3000
-```
+If GitHub Pages is enabled, view the live site here:  
+👉 [https://riti0005.github.io/dikshita2.0/](https://riti0005.github.io/dikshita2.0/)  
+(If not, follow setup instructions below to enable it!)
 
-### Get server status
-```http
-GET /status
-```
+---
 
-#### Description
-Get a status that whether the server is processing.
+## 🛠️ How to Use
 
-#### Responses
-
-| Value | Description |
-| --- | --- |
-| ACTIVE | processing |
-| INACTIVE | not processing |
-| TIMEOUT | could not get status in time |
-
-#### Example
-
-##### Request
-
-```bash
-curl localhost:3000/status
-```
-
-##### Response
-
-```
-INACTIVE
-```
-
-### Register target
-```http
-POST /admin
-```
-
-#### Description
-Register target properties to the server.
-
-#### Request body parameters
-
-| Name | Type | Required | Description |
-| --- | --- | --- | --- |
-| target | String | Yes | the name of the target |
-| count | Uint32 | Yes | the target of the quantity |
-
-#### Responses
-
-| Value |
-| --- |
-| Control message issued for Target: `target`, Count: `count` |
-
-#### Example
-
-##### Request
-
-```bash
-curl -X POST -d 'target=ちょろすぎて草Tシャツ' -d 'count=200' localhost:3000/admin
-```
-
-##### Response
-
-```
-Control message issued for Target: ちょろすぎて草Tシャツ, Count: 200
-```
+1. Clone the repo or download the ZIP:
+   ```bash
+   git clone https://github.com/riti0005/dikshita2.0.git
