@@ -2,130 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tisha Weds Ritik</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <title>For My Tishu 💖</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap');
+
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #e7a9c0, #dfa7c9);
-      font-family: 'Dancing Script', cursive;
-      overflow: hidden;
-    }
+      background: linear-gradient(to right, #d36c86, #f48fb1);
 
-    .container {
       height: 100vh;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      position: relative;
+      justify-content: center;
     }
 
-    h1, h2, h3, .quote {
-      margin: 0;
-      opacity: 0;
-      animation-fill-mode: forwards;
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px #ff6f91;
+      animation: fadeInDown 2s ease-in-out;
     }
 
-    .quote {
-      font-size: 1.8rem;
-      color: #fff5f5;
+    .button {
+      padding: 14px 28px;
+      margin: 10px;
+      font-size: 18px;
+      color: white;
+      background-color: #ff6f91;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ff4f80;
+      transform: scale(1.1);
+    }
+
+    #message {
+      margin-top: 20px;
+      color: #fff;
+      font-size: 22px;
       text-align: center;
+      padding: 0 30px;
+      animation: fadeInUp 1s ease;
       max-width: 90%;
-      animation: fadeIn 2s ease-in forwards, fadeOut 1s ease-out forwards 4s;
-    }
-
-    .tisha {
-      font-size: 3rem;
-      color: #5d3fd3;
-      animation: fadeIn 2s ease-in forwards;
-      animation-delay: 6s;
-    }
-
-    .weds {
-      font-size: 2.5rem;
-      color: #b30000;
-      animation: fadeIn 2s ease-in forwards;
-      animation-delay: 10s;
-    }
-
-    .ritik {
-      font-size: 3rem;
-      color: #003366;
-      animation: fadeIn 2s ease-in forwards;
-      animation-delay: 14s;
-      position: relative;
+      min-height: 160px;
     }
 
     .heart {
       position: absolute;
-      width: 40px;
-      height: 40px;
-      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
-      left: 105%;
-      top: 10%;
-      opacity: 0;
-      animation: fadeInHeart 1.5s ease-in forwards;
-      animation-delay: 17s;
+      width: 30px;
+      height: 30px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Love_Heart_SVG.svg') no-repeat center/contain;
+      animation: float 8s infinite ease-in;
+      opacity: 0.4;
     }
 
-    .flower {
-      position: absolute;
-      top: -50px;
-      font-size: 24px;
-      animation: fall linear infinite;
-      opacity: 0.8;
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeOut {
-      to { opacity: 0; }
-    }
-
-    @keyframes fadeInHeart {
-      0% { opacity: 0; transform: scale(0.5); }
-      50% { opacity: 1; transform: scale(1.2); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(-50px) rotate(0deg); }
-      100% { transform: translateY(110vh) rotate(360deg); }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1); }
+      100% { transform: translateY(-10vh) scale(1.5); }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="quote">People said me to go where I have a value sooo I chose this ☺️☺️</div>
-    <h1 class="tisha">Tisha</h1>
-    <h2 class="weds">weds</h2>
-    <h3 class="ritik">Ritik
-      <span class="heart"></span>
-    </h3>
-  </div>
+
+  <h1>For My Tishu 💖</h1>
+
+  <button class="button" onclick="showLoveNote()">💌 Love Note for Tishu</button>
+  <button class="button" onclick="showReasons()">💖 Why I Love You, Tishu</button>
+  <button class="button" onclick="showCountdown()">📅 Countdown to Hamari Mulaqat</button>
+  <button class="button" onclick="showPoem()">🐾 Poem for My Tishu</button>
+
+  <div id="message"></div>
 
   <script>
-    // Start continuous flower shower after heart
-    setTimeout(() => {
-      const createPetal = () => {
-        const flower = document.createElement('div');
-        flower.classList.add('flower');
-        flower.style.left = Math.random() * 100 + 'vw';
-        flower.style.animationDuration = (4 + Math.random() * 3) + 's';
-        flower.style.fontSize = (20 + Math.random() * 20) + 'px';
-        flower.innerText = ['🌸', '🌺', '🌼'][Math.floor(Math.random() * 3)];
-        document.body.appendChild(flower);
-        setTimeout(() => flower.remove(), 10000);
-      };
+    const messageBox = document.getElementById("message");
 
-      const interval = setInterval(createPetal, 150);
-      setTimeout(() => clearInterval(interval), 8000);
-    }, 18000); // Start after 18s
+    function showLoveNote() {
+      messageBox.innerHTML = `
+        Dear Tishu,<br><br>
+        Tum meri life ka sabse pyaara hissa ho. Jab tum ‘Raja ji’ ya ‘husband’ bolti ho na, dil seedha moonwalk karne lagta hai 🕺🏻💘.<br>
+        Tumhari wo cute si hairband, tumhara nakhre wala gussa, aur tumhara pyaar bhara ‘Meeaww’ – sab kuch mere liye priceless hai.<br>
+        Main tumse har din, har ghadi, aur har saans se zyada pyaar karta hoon.<br><br>
+        – Tumhara Raja ji 💗
+      `;
+    }
+
+    function showReasons() {
+      messageBox.innerHTML = `
+        Reasons I love you, Tishu:<br><br>
+        💖 Tumhari hairband wali look = total heart attack 😍<br>
+        💖 Jab tum mujhe 'Raja ji' bolti ho, duniya ruk jaati hai<br>
+        💖 Tum jab naraz hoti ho, aur phir khud maan jaati ho 🥺<br>
+        💖 Tumhara 'Meeaww' mere dil ko cuddle karta hai<br>
+        💖 Tum meri sabse badi support system ho<br>
+        💖 Tum meri zindagi ka sabse pyaara part ho — future wife wala pyaar 💍
+      `;
+    }
+
+    function showCountdown() {
+      const targetDate = new Date("2025-08-02T00:00:00");
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff < 0) {
+        messageBox.innerHTML = "🎉 Hamari mulaqat ho chuki hai! Ab sirf yaadein nahi, naye pal bante hain! 💕";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      messageBox.innerHTML =
+        `⏳ Countdown to Hamari Mulaqat (2 August):<br><br>` +
+        `${days} din, ${hours} ghante, ${minutes} minute, ${seconds} second baaki hai!<br><br>` +
+        `Tayyari karlo meri jaan... Raja ji aa rahe hain! 💞`;
+    }
+
+    function showPoem() {
+      messageBox.innerHTML = `
+      <div class="poem-text">
+  <p>
+    Tumhaare chehre ka noor, chand se bhi zyada hai,<br>
+    Har pal tumhaari yaadon mein, dil fanaa zyada hai.<br><br>
+
+    Tishu, tumhaari muskaan meri duniya ko roshan kare,<br>
+    Tumhaari khamoshi bhi, meri rooh ko sukoon de.<br><br>
+
+    Naazuk si ho tum, phir bhi meri taaqat ho tum,<br>
+    Mere khwabon ki shahzaadi, meri chaahat ho tum.<br><br>
+
+    2 August ka intezaar hai, jaise chaand ka Eid se milna,<br>
+    Tumse milke kehna hai — tum meri zindagi ho, Tishu… dil se. 💖
+  </p>
+</div>
+
+      `;
+    }
+
+    // Floating hearts
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 8 + 's';
+      document.body.appendChild(heart);
+    }
+
+    // Optional: keep updating countdown
+    setInterval(() => {
+      if (messageBox.innerHTML.includes("Countdown")) {
+        showCountdown();
+      }
+    }, 1000);
   </script>
+
 </body>
 </html>
